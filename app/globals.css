@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "fullcalendar.css";
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --fc-button-text-color: #000;
+  --fc-button-border-color: #e5e7eb;
+  --fc-button-bg-color: #fff;
+  --fc-button-hover-bg-color: #fff;
+  --fc-page-bg-color: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +31,33 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.gradient-bg {
+  background: rgb(187, 244, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(187, 244, 255, 1) 0%,
+    rgba(193, 230, 255, 1) 50%,
+    rgba(226, 206, 255, 1) 100%
+  );
+}
+
+:is(.dark .gradient-bg)
+{
+  background: rgb(0, 103, 124);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 103, 124, 1) 0%,
+    rgba(0, 75, 126, 1) 50%,
+    rgba(58, 16, 119, 1) 100%
+  );
+}
+
+.inverse-color {
+  color: black;
+}
+
+:is(.dark .inverse-color) {
+  color: white;
 }
